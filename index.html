@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hseo's 채보작업실</title>
+    <style>
+        :root {
+            --primary-color: #3b82f6; /* 메인 블루 컬러 */
+            --bg-color: #f8fafc;
+            --text-color: #1e293b;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        /* 네비게이션 */
+        header {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links a {
+            margin-left: 2rem;
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* 히어로 섹션 */
+        .hero {
+            padding: 160px 20px 100px;
+            text-align: center;
+            background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            word-break: keep-all;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #64748b;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.2);
+        }
+
+        /* 공통 섹션 스타일 */
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        /* 서비스 카드 */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+
+        /* 포트폴리오 (간단 예시) */
+        .portfolio-item {
+            background: #eee;
+            height: 200px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            margin-bottom: 1rem;
+        }
+
+        /* 가격표 */
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .price-table th, .price-table td {
+            padding: 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .price-table th {
+            background-color: #f1f5f9;
+            font-weight: bold;
+        }
+
+        /* 푸터 */
+        footer {
+            background-color: #1e293b;
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+            margin-top: 4rem;
+        }
+
+        /* 모바일 대응 */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .nav-links { display: none; } /* 간단함을 위해 모바일 메뉴 숨김 처리 (추후 추가 가능) */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="#" class="logo">Hseo's 채보작업실</a>
+            <div class="nav-links">
+                <a href="#about">소개</a>
+                <a href="#services">서비스</a>
+                <a href="#portfolio">포트폴리오</a>
+                <a href="#contact">문의하기</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>당신의 음악을 악보로 기록합니다</h1>
+        <p>정확하고 가독성 좋은 악보 제작, Hseo의 채보 작업실에 오신 것을 환영합니다.<br>피아노, 기타, 밴드 스코어까지 무엇이든 문의주세요.</p>
+        <a href="#contact" class="cta-button">작업 의뢰하기</a>
+    </section>
+
+    <section id="services">
+        <h2>Services</h2>
+        <div class="grid-container">
+            <div class="card">
+                <h3>🎹 피아노 채보</h3>
+                <p>뉴에이지, 가요 반주, 재즈 솔로 등 피아노 연주를 정확하게 악보로 옮겨드립니다. 손가락 번호 포함 가능.</p>
+            </div>
+            <div class="card">
+                <h3>🎸 기타/베이스 타브</h3>
+                <p>동영상이나 음원을 듣고 기타 및 베이스 라인을 타브(TAB) 악보와 함께 제작해 드립니다.</p>
+            </div>
+            <div class="card">
+                <h3>🎼 멜로디/코드 채보</h3>
+                <p>보컬 멜로디와 코드 진행을 정리하여 리드 시트(Lead Sheet) 형태로 제작합니다. 축가 반주용으로 추천.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <h2>Portfolio</h2>
+        <div class="grid-container">
+            <div class="card">
+                <div class="portfolio-item">악보 샘플 이미지 / 영상</div>
+                <h3>[작업물] 아이유 - 밤편지 (Piano Ver.)</h3>
+                <p>섬세한 감정선을 살린 피아노 솔로 편곡 채보</p>
+            </div>
+            <div class="card">
+                <div class="portfolio-item">악보 샘플 이미지 / 영상</div>
+                <h3>[작업물] 밴드 커버용 Full Score</h3>
+                <p>드럼, 베이스, 기타, 건반 풀 파트 악보 제작</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing">
+        <h2>Price Info</h2>
+        <table class="price-table">
+            <thead>
+                <tr>
+                    <th>구분</th>
+                    <th>가격 (곡 길이/난이도에 따라 변동)</th>
+                    <th>비고</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>멜로디 + 코드 (1단)</td>
+                    <td>15,000원 ~</td>
+                    <td>보컬 악보, 리드시트</td>
+                </tr>
+                <tr>
+                    <td>피아노 (2단)</td>
+                    <td>30,000원 ~</td>
+                    <td>난이도 상/중/하 조절 가능</td>
+                </tr>
+                <tr>
+                    <td>풀 밴드 스코어</td>
+                    <td>80,000원 ~</td>
+                    <td>전체 파트 포함</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <div class="card" style="text-align: center; max-width: 600px; margin: 0 auto;">
+            <p>작업 의뢰나 견적 문의는 아래 채널을 이용해 주세요.</p>
+            <br>
+            <p><strong>KakaoTalk:</strong> <a href="#" style="color:#3b82f6;">오픈채팅방 링크 입력</a></p>
+            <p><strong>Email:</strong> example@email.com</p>
+            <br>
+            <p style="color: #888; font-size: 0.9rem;">* 문의 시 [곡명 / 원하시는 악보 형태 / 마감기한]을 알려주시면 빠른 상담이 가능합니다.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Hseo's Music Transcription Studio. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
