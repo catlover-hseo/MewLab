@@ -3,158 +3,194 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CatLover's 채보작업실</title>
+    <title>MEW LAB | 전문 채보 스튜디오</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Noto+Serif+KR:wght@500;700&family=Pretendard:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            /* 고양이 느낌에 맞춰 따뜻한 오렌지/브라운 톤으로 살짝 변경해봤습니다. 
-               원래 파란색이 좋으시면 #3b82f6 로 다시 바꾸셔도 됩니다. */
-            --primary-color: #ea580c; 
-            --bg-color: #fffaf0; /* 아주 연한 아이보리 배경 */
-            --text-color: #1e293b;
-            --card-bg: #ffffff;
+            /* MEW LAB 브랜드 컬러 시스템 */
+            --primary-color: #1B365D; /* 신뢰감 있는 네이비 */
+            --accent-color: #D98324;  /* 포인트 골드 */
+            --bg-color: #F8FAFC;      /* 차분한 배경색 */
+            --text-color: #4A5568;    /* 짙은 회색 본문 */
+            --card-bg: #FFFFFF;
+            
+            /* 폰트 변수 */
+            --heading-font: 'Cormorant Garamond', 'Noto Serif KR', serif; /* 제목용 */
+            --body-font: 'Pretendard', sans-serif; /* 본문용 */
         }
 
         body {
-            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+            font-family: var(--body-font);
             margin: 0;
             padding: 0;
-            line-height: 1.6;
+            line-height: 1.7;
             color: var(--text-color);
             background-color: var(--bg-color);
         }
 
         /* 네비게이션 */
         header {
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid #fed7aa; /* 연한 오렌지 테두리 */
+            border-bottom: 1px solid rgba(27, 54, 93, 0.1);
         }
 
         nav {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 1rem 2rem;
+            padding: 1.2rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
+            font-family: var(--heading-font);
+            font-size: 1.8rem;
+            font-weight: 700;
             color: var(--primary-color);
             text-decoration: none;
+            letter-spacing: -0.02em;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
+        }
+        
+        .logo span {
+            color: var(--accent-color); /* LAB 부분은 골드색으로 강조 */
         }
 
         .nav-links a {
-            margin-left: 2rem;
+            margin-left: 2.5rem;
             text-decoration: none;
             color: var(--text-color);
             font-weight: 500;
-            transition: color 0.3s;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
         }
 
         .nav-links a:hover {
-            color: var(--primary-color);
+            color: var(--accent-color);
         }
 
         /* 히어로 섹션 */
         .hero {
-            padding: 180px 20px 120px;
+            padding: 200px 20px 140px;
             text-align: center;
-            background: linear-gradient(180deg, #fffaf0 0%, #ffffff 100%);
+            background: linear-gradient(180deg, #F1F5F9 0%, #FFFFFF 100%);
         }
 
         .hero h1 {
-            font-size: 3rem;
+            font-family: var(--heading-font);
+            font-size: 3.5rem;
             margin-bottom: 1.5rem;
-            word-break: keep-all;
-            color: #431407;
+            color: var(--primary-color);
+            line-height: 1.2;
+            letter-spacing: -0.03em;
         }
 
         .hero p {
-            font-size: 1.25rem;
-            color: #78350f;
-            margin-bottom: 2.5rem;
+            font-size: 1.2rem;
+            color: #64748B;
+            margin-bottom: 3rem;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
+            font-weight: 300;
         }
 
         .cta-button {
             display: inline-block;
             background-color: var(--primary-color);
             color: white;
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
+            padding: 1rem 3rem;
+            border-radius: 2px; /* 전문적인 느낌을 위해 둥근 정도를 줄임 */
             text-decoration: none;
-            font-weight: bold;
-            transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 4px 14px rgba(234, 88, 12, 0.3);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(27, 54, 93, 0.2);
         }
 
         .cta-button:hover {
+            background-color: var(--accent-color);
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(234, 88, 12, 0.4);
+            box-shadow: 0 10px 20px rgba(217, 131, 36, 0.3);
         }
 
         /* 공통 섹션 스타일 */
         section {
-            padding: 80px 20px;
+            padding: 100px 20px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         h2 {
-            font-size: 2rem;
+            font-family: var(--heading-font);
+            font-size: 2.5rem;
             text-align: center;
-            margin-bottom: 3rem;
-            color: #431407;
+            margin-bottom: 4rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 20px auto 0;
         }
 
-        /* 서비스 카드 */
+        /* 그리드 및 카드 */
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
         }
 
         .card {
             background: var(--card-bg);
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s;
-            border: 1px solid #fff7ed;
+            padding: 2.5rem;
+            border: 1px solid #E2E8F0;
+            transition: all 0.3s ease;
+            position: relative;
+            top: 0;
         }
 
         .card:hover {
-            transform: translateY(-5px);
+            top: -5px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+            border-color: var(--accent-color);
         }
 
         .card h3 {
+            font-family: var(--heading-font);
+            font-size: 1.5rem;
             margin-top: 0;
             color: var(--primary-color);
+            margin-bottom: 1rem;
         }
 
-        /* 포트폴리오 (간단 예시) */
+        /* 포트폴리오 */
         .portfolio-item {
-            background: #fed7aa; /* 오렌지 톤 박스 */
-            height: 200px;
-            border-radius: 12px;
+            background-color: #F1F5F9;
+            height: 220px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #9a3412;
-            margin-bottom: 1rem;
-            font-weight: bold;
+            color: #94A3B8;
+            margin-bottom: 1.5rem;
+            font-family: var(--heading-font);
+            font-size: 1.2rem;
+            border: 1px dashed #CBD5E1;
         }
 
         /* 가격표 */
@@ -162,35 +198,71 @@
             width: 100%;
             border-collapse: collapse;
             background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+            border: 1px solid #E2E8F0;
         }
 
         .price-table th, .price-table td {
-            padding: 1.5rem;
+            padding: 1.8rem;
             text-align: left;
-            border-bottom: 1px solid #ffedd5;
+            border-bottom: 1px solid #F1F5F9;
         }
 
         .price-table th {
-            background-color: #fff7ed;
-            color: #9a3412;
-            font-weight: bold;
+            background-color: var(--primary-color);
+            color: white;
+            font-family: var(--heading-font);
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+        
+        .price-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* 문의하기 */
+        .contact-box {
+            background: white;
+            padding: 3rem;
+            text-align: center;
+            border: 1px solid #E2E8F0;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-link {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            text-decoration: none;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 2px;
+            transition: color 0.2s;
+        }
+        
+        .contact-link:hover {
+            color: var(--accent-color);
         }
 
         /* 푸터 */
         footer {
-            background-color: #431407;
-            color: #fed7aa;
+            background-color: var(--primary-color);
+            color: #94A3B8;
             text-align: center;
-            padding: 3rem 1rem;
-            margin-top: 4rem;
+            padding: 4rem 1rem;
+            margin-top: 6rem;
+            font-size: 0.9rem;
+        }
+        
+        footer strong {
+            color: white;
+            font-family: var(--heading-font);
+            font-size: 1.1rem;
         }
 
         /* 모바일 대응 */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
+            .hero h1 { font-size: 2.5rem; }
             .nav-links { display: none; } 
         }
     </style>
@@ -199,100 +271,107 @@
 
     <header>
         <nav>
-            <a href="#" class="logo">🐈 CatLover's 채보작업실</a>
+            <a href="#" class="logo">MEW <span>LAB</span></a>
             <div class="nav-links">
-                <a href="#about">소개</a>
-                <a href="#services">서비스</a>
-                <a href="#portfolio">포트폴리오</a>
-                <a href="#contact">문의하기</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#portfolio">Works</a>
+                <a href="#contact">Contact</a>
             </div>
         </nav>
     </header>
 
     <section class="hero">
-        <h1>음악을 사랑하는 집사의<br>꼼꼼한 악보 제작소</h1>
-        <p>정확하고 가독성 좋은 악보, CatLover가 책임집니다.<br>피아노, 기타, 밴드 스코어까지 무엇이든 문의주세요.</p>
-        <a href="#contact" class="cta-button">작업 의뢰하기</a>
+        <h1>음악을 기록하는<br>가장 섬세한 연구소</h1>
+        <p>MEW LAB은 소리를 시각적 언어로 번역합니다.<br>정확성을 넘어, 음악의 뉘앙스까지 담아내는 전문 채보 서비스를 경험하세요.</p>
+        <a href="#contact" class="cta-button">프로젝트 의뢰하기</a>
     </section>
 
     <section id="services">
-        <h2>Services</h2>
+        <h2>Our Services</h2>
         <div class="grid-container">
             <div class="card">
-                <h3>🎹 피아노 채보</h3>
-                <p>뉴에이지, 가요 반주, 재즈 솔로 등 피아노 연주를 섬세하게 악보로 옮겨드립니다.</p>
+                <h3>Piano Transcription</h3>
+                <p>연주자의 터치와 페달링까지 고려한 피아노 악보를 제작합니다. 단순 채보를 넘어 연주 가능한 최적의 운지법을 제안합니다.</p>
             </div>
             <div class="card">
-                <h3>🎸 기타/베이스 타브</h3>
-                <p>라인 하나하나 놓치지 않고 타브(TAB) 악보와 함께 정확하게 제작해 드립니다.</p>
+                <h3>Band Score & Tabs</h3>
+                <p>기타, 베이스, 드럼 등 밴드 세션의 모든 라인을 분석합니다. 정확한 타브(TAB) 악보와 파트보를 제공합니다.</p>
             </div>
             <div class="card">
-                <h3>🎼 멜로디/코드 채보</h3>
-                <p>보컬 멜로디와 코드 진행을 깔끔하게 정리한 리드 시트(Lead Sheet) 제작.</p>
+                <h3>Lead Sheet & Chord</h3>
+                <p>보컬과 세션을 위한 깔끔한 리드 시트를 제작합니다. 복잡한 화성을 명확한 코드로 정리하여 재해석의 기반을 마련합니다.</p>
             </div>
         </div>
     </section>
 
     <section id="portfolio">
-        <h2>Portfolio</h2>
+        <h2>Selected Works</h2>
         <div class="grid-container">
             <div class="card">
-                <div class="portfolio-item">악보 샘플 보기</div>
-                <h3>[Piano] 감성 발라드 커버</h3>
-                <p>원곡의 느낌을 살린 피아노 2단 악보</p>
+                <div class="portfolio-item">Score Preview Image</div>
+                <h3>Jazz Piano Solo</h3>
+                <p>복잡한 텐션 코드와 즉흥 연주 라인을 완벽하게 악보화</p>
             </div>
             <div class="card">
-                <div class="portfolio-item">악보 샘플 보기</div>
-                <h3>[Full Score] 락 밴드 합주용</h3>
-                <p>드럼, 베이스, 기타, 건반 총보</p>
+                <div class="portfolio-item">Score Preview Image</div>
+                <h3>Full Orchestra Cover</h3>
+                <p>다양한 악기 구성의 총보(Full Score) 제작 프로젝트</p>
             </div>
         </div>
     </section>
 
     <section id="pricing">
-        <h2>Price Info</h2>
+        <h2>Pricing Plan</h2>
         <table class="price-table">
             <thead>
                 <tr>
-                    <th>구분</th>
-                    <th>가격 (곡 길이/난이도에 따라 변동)</th>
-                    <th>비고</th>
+                    <th width="30%">Service</th>
+                    <th width="30%">Price (Start from)</th>
+                    <th>Detail</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>멜로디 + 코드 (1단)</td>
-                    <td>15,000원 ~</td>
-                    <td>보컬용 리드시트</td>
+                    <td><strong>Lead Sheet</strong></td>
+                    <td>₩ 15,000 ~</td>
+                    <td>멜로디 + 코드 (1단 악보)</td>
                 </tr>
                 <tr>
-                    <td>피아노 (2단)</td>
-                    <td>30,000원 ~</td>
-                    <td>난이도 조절 가능</td>
+                    <td><strong>Piano Score</strong></td>
+                    <td>₩ 30,000 ~</td>
+                    <td>피아노 솔로 / 반주 (2단 악보)</td>
                 </tr>
                 <tr>
-                    <td>풀 밴드 스코어</td>
-                    <td>80,000원 ~</td>
-                    <td>전 파트 포함</td>
+                    <td><strong>Full Score</strong></td>
+                    <td>₩ 80,000 ~</td>
+                    <td>밴드 및 앙상블 총보</td>
                 </tr>
             </tbody>
         </table>
+        <p style="text-align: center; margin-top: 1rem; color: #64748B; font-size: 0.9rem;">* 곡의 길이, 난이도, 마감 기한에 따라 견적이 조정될 수 있습니다.</p>
     </section>
 
     <section id="contact">
-        <h2>Contact</h2>
-        <div class="card" style="text-align: center; max-width: 600px; margin: 0 auto;">
-            <p>의뢰를 원하시나요? 아래로 편하게 연락주세요.</p>
-            <br>
-            <p><strong>KakaoTalk:</strong> <a href="#" style="color:#ea580c; font-weight:bold;">오픈채팅방 링크 입력</a></p>
-            <p><strong>Email:</strong> example@email.com</p>
-            <br>
-            <p style="color: #888; font-size: 0.9rem;">* 문의 시 [곡명 / 원하시는 악보 형태 / 마감기한]을 알려주세요.</p>
+        <h2>Contact Us</h2>
+        <div class="contact-box">
+            <p style="margin-bottom: 2rem;">작업에 대해 궁금한 점이 있으신가요?<br>아래 채널로 편하게 문의해 주세요.</p>
+            
+            <div style="margin-bottom: 1.5rem;">
+                <span style="display:block; font-size:0.9rem; color:#94A3B8; margin-bottom:5px;">KAKAO TALK</span>
+                <a href="#" class="contact-link">오픈채팅방 바로가기</a>
+            </div>
+            
+            <div>
+                <span style="display:block; font-size:0.9rem; color:#94A3B8; margin-bottom:5px;">E-MAIL</span>
+                <a href="mailto:example@email.com" class="contact-link">example@email.com</a>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2025 CatLover's Music Transcription Studio. All rights reserved.</p>
+        <p><strong>MEW LAB</strong> Music Transcription Studio</p>
+        <p>&copy; 2025 MEW LAB. All rights reserved.</p>
     </footer>
 
 </body>
